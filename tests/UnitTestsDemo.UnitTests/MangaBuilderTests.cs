@@ -29,4 +29,30 @@ public class MangaBuilderTests
         Assert.Equal(expectedManga.Genres, actualManga.Genres);
         Assert.Equal(expectedManga.Price, actualManga.Price);
     }
+
+    [Fact]
+    public void ActualMangaShouldMatchBuilderDefaultValuesManga()
+    {
+        // Arrange
+        var expectedManga = new MangaBuilder()
+            .WithTitle("One Piece")
+            .WithGenres(["Shounen", "Commedy"])
+            .WithDefaultPrice()
+            .WithGenre("Pirates")
+            .Build();
+
+        // Act
+        var actualManga = MangaFactory.CreateManga
+        (
+            "One Piece",
+            ["Shounen", "Commedy", "Pirates"],
+            9.99m
+        );
+
+        // Assert
+        Assert.NotNull(actualManga);
+        Assert.Equal(expectedManga.Title, actualManga.Title);
+        Assert.Equal(expectedManga.Genres, actualManga.Genres);
+        Assert.Equal(expectedManga.Price, actualManga.Price);
+    }
 }

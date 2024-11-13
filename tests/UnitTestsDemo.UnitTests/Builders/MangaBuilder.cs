@@ -8,6 +8,19 @@ public class MangaBuilder
     private IEnumerable<string> _genres = [];
     private decimal _price;
 
+    public MangaBuilder WithDefaultPrice()
+    {
+        _price = 9.99m;
+        return this;
+    }
+
+    public MangaBuilder WithGenre(string genre)
+    {
+        var newGenres = _genres.Append(genre);
+        _genres = newGenres;
+        return this;
+    }
+    
     public MangaBuilder WithTitle(string title)
     {
         _title = title;
