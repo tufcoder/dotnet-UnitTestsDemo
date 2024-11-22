@@ -5,8 +5,10 @@ namespace UnitTestsDemo.UnitTests.Builders;
 public class MangaBuilder
 {
     private string _title = string.Empty;
-    private IEnumerable<string> _genres = [];
+    private IEnumerable<MangaGenres> _genres = [];
     private decimal _price;
+    private DateTime _releaseDate;
+    private DateTime _createdAt;
 
     public MangaBuilder WithDefaultPrice()
     {
@@ -14,7 +16,7 @@ public class MangaBuilder
         return this;
     }
 
-    public MangaBuilder WithGenre(string genre)
+    public MangaBuilder WithGenre(MangaGenres genre)
     {
         var newGenres = _genres.Append(genre);
         _genres = newGenres;
@@ -27,7 +29,7 @@ public class MangaBuilder
         return this;
     }
 
-    public MangaBuilder WithGenres(IEnumerable<string> genres)
+    public MangaBuilder WithGenres(IEnumerable<MangaGenres> genres)
     {
         _genres = genres;
         return this;
@@ -39,13 +41,27 @@ public class MangaBuilder
         return this;
     }
 
+    public MangaBuilder WithReleaseDate(DateTime releaseDate)
+    {
+        _releaseDate = releaseDate;
+        return this;
+    }
+
+    public MangaBuilder WithCreatedAt(DateTime createdAt)
+    {
+        _createdAt = createdAt;
+        return this;
+    }
+
     public Manga Build()
     {
         return new Manga
         {
             Title = _title,
             Genres = _genres,
-            Price = _price
+            Price = _price,
+            ReleaseDate = _releaseDate,
+            CreatedAt = _createdAt,
         };
     }
 }

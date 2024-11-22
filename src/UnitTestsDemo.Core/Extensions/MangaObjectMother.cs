@@ -9,8 +9,14 @@ public class MangaObjectMother
         return new Manga
         {
             Title = "One Piece",
-            Genres = ["Shounen", "Commedy", "Pirates"],
-            Price = 19.99m
+            Genres = new List<MangaGenres>() {
+                MangaGenres.Shounen,
+                MangaGenres.Commedy,
+                MangaGenres.Pirates,
+            },
+            Price = 19.99m,
+            ReleaseDate = new DateTime(2024, 12, 01).AddYears(-4),
+            CreatedAt = new DateTime(2024, 12, 01)
         };
     }
 
@@ -19,8 +25,14 @@ public class MangaObjectMother
         return new Manga
         {
             Title = "Hajime no Ippo",
-            Genres = ["Shounen", "Commedy", "Boxe"],
-            Price = 21.99m
+            Genres = new List<MangaGenres>() {
+                MangaGenres.Shounen,
+                MangaGenres.Commedy,
+                MangaGenres.Boxe,
+            },
+            Price = 21.99m,
+            ReleaseDate = new DateTime(2024, 12, 01).AddYears(-4),
+            CreatedAt = new DateTime(2024, 12, 01)
         };
     }
 }

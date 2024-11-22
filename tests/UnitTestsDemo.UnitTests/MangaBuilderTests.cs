@@ -1,4 +1,5 @@
 ﻿using UnitTestsDemo.Core.Extensions;
+using UnitTestsDemo.Core.Models;
 using UnitTestsDemo.UnitTests.Builders;
 
 namespace UnitTestsDemo.UnitTests;
@@ -11,7 +12,14 @@ public class MangaBuilderTests
         // Arrange
         var expectedManga = new MangaBuilder()
             .WithTitle("One Piece")
-            .WithGenres(["Shounen", "Commedy", "Pirates"])
+            .WithGenres(
+                new List<MangaGenres>()
+                {
+                    MangaGenres.Shounen,
+                    MangaGenres.Commedy,
+                    MangaGenres.Pirates,
+                }
+            )
             .WithPrice(19.99m)
             .Build();
 
@@ -19,7 +27,11 @@ public class MangaBuilderTests
         var actualManga = MangaFactory.CreateManga
         (
             "One Piece",
-            ["Shounen", "Commedy", "Pirates"],
+            new List<MangaGenres>() {
+                MangaGenres.Shounen,
+                MangaGenres.Commedy,
+                MangaGenres.Pirates,
+            },
             19.99m
         );
 
@@ -36,23 +48,35 @@ public class MangaBuilderTests
         // Arrange
         var expectedManga = new MangaBuilder()
             .WithTitle("One Piece")
-            .WithGenres(["Shounen", "Commedy"])
+            .WithGenres(
+                new List<MangaGenres>()
+                {
+                    MangaGenres.Shounen,
+                    MangaGenres.Commedy,
+                }
+            )
             .WithDefaultPrice()
-            .WithGenre("Pirates")
+            .WithGenre(MangaGenres.Pirates)
+            .WithReleaseDate(new DateTime(2024, 12, 01).AddYears(-4))
+            .WithCreatedAt(new DateTime(2024, 12, 01))
             .Build();
 
         // Act
-        var actualManga = MangaFactory.CreateManga
+        var manga = MangaFactory.CreateManga
         (
-            "One Piece",
-            ["Shounen", "Commedy", "Pirates"],
-            9.99m
+            expectedManga.Title,
+            expectedManga.Genres,
+            expectedManga.Price,
+            expectedManga.ReleaseDate,
+            expectedManga.CreatedAt
         );
 
         // Assert
-        Assert.NotNull(actualManga);
-        Assert.Equal(expectedManga.Title, actualManga.Title);
-        Assert.Equal(expectedManga.Genres, actualManga.Genres);
-        Assert.Equal(expectedManga.Price, actualManga.Price);
+        Assert.NotNull(manga);
+        Assert.Equal(expectedManga.Title, manga.Title);
+        Assert.Equal(expectedManga.Genres, manga.Genres);
+        Assert.Equal(expectedManga.Price, manga.Price);
+        Assert.Equal(expectedManga.ReleaseDate, manga.ReleaseDate);
+        Assert.Equal(expectedManga.CreatedAt, manga.CreatedAt);
     }
 }

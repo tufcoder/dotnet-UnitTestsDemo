@@ -3,6 +3,10 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+# sqlite
+*.db
+*.sqlite
+
 # dotenv files
 .env
 
