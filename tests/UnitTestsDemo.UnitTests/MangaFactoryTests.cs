@@ -1,11 +1,7 @@
-﻿using System.Diagnostics;
-
-using Bogus;
+﻿using Bogus;
 
 using UnitTestsDemo.Core.Extensions;
 using UnitTestsDemo.Core.Models;
-
-using static Bogus.DataSets.Name;
 
 namespace UnitTestsDemo.UnitTests;
 
