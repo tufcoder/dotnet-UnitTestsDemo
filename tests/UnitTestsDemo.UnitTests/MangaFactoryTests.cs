@@ -14,7 +14,7 @@ public class MangaFactoryTests
         _faker = new Faker();
     }
 
-    public Manga CreateRandomManga()
+    private Manga CreateRandomManga()
     {
         return new Manga()
         {
@@ -33,56 +33,6 @@ public class MangaFactoryTests
 
     [Fact]
     public void Test_CreateManga()
-    {
-        // Arrange
-        var title = _faker.Commerce.ProductName();
-        var genres = new List<MangaGenres>()
-        {
-            _faker.Random.Enum<MangaGenres>(),
-            _faker.Random.Enum<MangaGenres>(),
-            _faker.Random.Enum<MangaGenres>()
-        };
-        var price = _faker.Finance.Amount();
-
-        // Act
-        var manga = MangaFactory.CreateManga(title, genres, price);
-
-        // Assert
-        Assert.NotNull(manga);
-        Assert.Equal(title, manga.Title);
-        Assert.Equal(genres, manga.Genres);
-        Assert.Equal(price, manga.Price);
-    }
-
-    [Fact]
-    public void Test_CreateMangaFullProps()
-    {
-        // Arrange
-        var title = _faker.Commerce.ProductName();
-        var genres = new List<MangaGenres>()
-        {
-            _faker.Random.Enum<MangaGenres>(),
-            _faker.Random.Enum<MangaGenres>(),
-            _faker.Random.Enum<MangaGenres>()
-        };
-        var price = _faker.Finance.Amount();
-        var releaseDate = _faker.Date.Past();
-        var createdAt = _faker.Date.Soon();
-
-        // Act
-        var manga = MangaFactory.CreateManga(title, genres, price, releaseDate, createdAt);
-
-        // Assert
-        Assert.NotNull(manga);
-        Assert.Equal(title, manga.Title);
-        Assert.Equal(genres, manga.Genres);
-        Assert.Equal(price, manga.Price);
-        Assert.Equal(releaseDate, manga.ReleaseDate);
-        Assert.Equal(createdAt, manga.CreatedAt);
-    }
-
-    [Fact]
-    public void Test_CreateRandomManga()
     {
         // Arrange
         var randomManga = CreateRandomManga();

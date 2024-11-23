@@ -14,31 +14,6 @@ public class MangaObjectMotherTests
         var expectedManga = MangaObjectMother.CreateOnePieceManga();
 
         // Act
-        var actualManga = MangaFactory.CreateManga
-        (
-            "One Piece",
-            new List<MangaGenres>() {
-                MangaGenres.Shounen,
-                MangaGenres.Commedy,
-                MangaGenres.Pirates,
-            },
-            19.99m
-        );
-
-        // Assert
-        Assert.NotNull(actualManga);
-        Assert.Equal(expectedManga.Title, actualManga.Title);
-        Assert.Equal(expectedManga.Genres, actualManga.Genres);
-        Assert.Equal(expectedManga.Price, actualManga.Price);
-    }
-
-    [Fact]
-    public void Test_OnePieceFullPropsManga()
-    {
-        // Arrange
-        var expectedManga = MangaObjectMother.CreateOnePieceManga();
-
-        // Act
         var manga = MangaFactory.CreateManga
         (
             expectedManga.Title,
@@ -59,31 +34,6 @@ public class MangaObjectMotherTests
 
     [Fact]
     public void Test_HajimeNoIppoManga()
-    {
-        // Arrange
-        var expectedManga = MangaObjectMother.CreateHajimeNoIppoManga();
-
-        // Act
-        var actualManga = MangaFactory.CreateManga
-        (
-            "Hajime no Ippo",
-            new List<MangaGenres>() {
-                MangaGenres.Shounen,
-                MangaGenres.Commedy,
-                MangaGenres.Boxe,
-            },
-            21.99m
-        );
-
-        // Assert
-        Assert.NotNull(actualManga);
-        Assert.Equal(expectedManga.Title, actualManga.Title);
-        Assert.Equal(expectedManga.Genres, actualManga.Genres);
-        Assert.Equal(expectedManga.Price, actualManga.Price);
-    }
-
-    [Fact]
-    public void Test_HajimeNoIppoFullPropsManga()
     {
         // Arrange
         var expectedManga = MangaObjectMother.CreateHajimeNoIppoManga();

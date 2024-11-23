@@ -4,6 +4,9 @@ namespace UnitTestsDemo.Core.Extensions;
 
 public class MangaObjectMother
 {
+    private static readonly DateTime _releaseDate = new DateTime(2024, 12, 01).AddYears(-4);
+    private static readonly DateTime _createdAt = new DateTime(2024, 12, 01);
+
     public static Manga CreateOnePieceManga()
     {
         return new Manga
@@ -15,8 +18,8 @@ public class MangaObjectMother
                 MangaGenres.Pirates,
             },
             Price = 19.99m,
-            ReleaseDate = new DateTime(2024, 12, 01).AddYears(-4),
-            CreatedAt = new DateTime(2024, 12, 01)
+            ReleaseDate = _releaseDate,
+            CreatedAt = _createdAt
         };
     }
 
@@ -28,11 +31,11 @@ public class MangaObjectMother
             Genres = new List<MangaGenres>() {
                 MangaGenres.Shounen,
                 MangaGenres.Commedy,
-                MangaGenres.Boxe,
+                MangaGenres.Boxers,
             },
             Price = 21.99m,
-            ReleaseDate = new DateTime(2024, 12, 01).AddYears(-4),
-            CreatedAt = new DateTime(2024, 12, 01)
+            ReleaseDate = _releaseDate,
+            CreatedAt = _createdAt
         };
     }
 }

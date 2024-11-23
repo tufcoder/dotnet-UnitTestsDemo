@@ -6,7 +6,7 @@ public enum MangaGenres
     Shounen,
     Commedy,
     Pirates,
-    Boxe,
+    Boxers,
     Sports,
 }
 

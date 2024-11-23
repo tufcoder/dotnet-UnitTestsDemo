@@ -6,6 +6,9 @@ namespace UnitTestsDemo.UnitTests;
 
 public class MangaBuilderTests
 {
+    private readonly DateTime _releaseDate = new DateTime(2024, 12, 01).AddYears(-4);
+    private readonly DateTime _createdAt = new DateTime(2024, 12, 01);
+
     [Fact]
     public void ActualMangaShouldMatchBuilderManga()
     {
@@ -47,7 +50,7 @@ public class MangaBuilderTests
     {
         // Arrange
         var expectedManga = new MangaBuilder()
-            .WithTitle("One Piece")
+            .WithTitle("Hajime no Ippo")
             .WithGenres(
                 new List<MangaGenres>()
                 {
@@ -56,9 +59,9 @@ public class MangaBuilderTests
                 }
             )
             .WithDefaultPrice()
-            .WithGenre(MangaGenres.Pirates)
-            .WithReleaseDate(new DateTime(2024, 12, 01).AddYears(-4))
-            .WithCreatedAt(new DateTime(2024, 12, 01))
+            .WithGenre(MangaGenres.Boxers)
+            .WithReleaseDate(_releaseDate)
+            .WithCreatedAt(_createdAt)
             .Build();
 
         // Act
