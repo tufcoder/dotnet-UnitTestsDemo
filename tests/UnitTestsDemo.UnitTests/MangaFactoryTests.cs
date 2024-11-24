@@ -38,7 +38,8 @@ public class MangaFactoryTests
         var randomManga = CreateRandomManga();
 
         // Act
-        var manga = MangaFactory.CreateManga(
+        var manga = MangaFactory.CreateManga
+        (
             randomManga.Title,
             randomManga.Genres,
             randomManga.Price,

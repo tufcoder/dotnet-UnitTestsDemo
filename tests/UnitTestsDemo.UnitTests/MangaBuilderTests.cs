@@ -1,4 +1,6 @@
-﻿using UnitTestsDemo.Core.Extensions;
+﻿using System;
+
+using UnitTestsDemo.Core.Extensions;
 using UnitTestsDemo.Core.Models;
 using UnitTestsDemo.UnitTests.Builders;
 
@@ -23,6 +25,8 @@ public class MangaBuilderTests
                     MangaGenres.Pirates,
                 }
             )
+            .WithReleaseDate(_releaseDate)
+            .WithCreatedAt(_createdAt)
             .WithPrice(19.99m)
             .Build();
 
@@ -35,7 +39,9 @@ public class MangaBuilderTests
                 MangaGenres.Commedy,
                 MangaGenres.Pirates,
             },
-            19.99m
+            19.99m,
+            _releaseDate,
+            _createdAt
         );
 
         // Assert
@@ -43,6 +49,8 @@ public class MangaBuilderTests
         Assert.Equal(expectedManga.Title, actualManga.Title);
         Assert.Equal(expectedManga.Genres, actualManga.Genres);
         Assert.Equal(expectedManga.Price, actualManga.Price);
+        Assert.Equal(expectedManga.ReleaseDate, actualManga.ReleaseDate);
+        Assert.Equal(expectedManga.CreatedAt, actualManga.CreatedAt);
     }
 
     [Fact]
