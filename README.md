@@ -120,15 +120,19 @@ git add .
 git commit -m 'Add README.md file'
 mkdir src tests
 dotnet new classlib -o src/UnitTestsDemo.Core
+dotnet sln add src/UnitTestsDemo.Core/UnitTestsDemo.Core.csproj
 git add .
 git commit -m 'Add Core classlib project'
 dotnet new classlib -o src/UnitTestsDemo.Infrastructure
+dotnet sln add src/UnitTestsDemo.Infrastructure/UnitTestsDemo.Infrastructure.csproj
 git add .
 git commit -m 'Add Infrastructure classlib project'
 dotnet new razor -o src/UnitTestsDemo.Web
+dotnet sln add src/UnitTestsDemo.Web/UnitTestsDemo.Web.csproj
 git add .
 git commit -m 'Add Razor Pages project'
 dotnet new xunit -o tests/UnitTestsDemo.UnitTests
+dotnet sln add tests/UnitTestsDemo.UnitTests/UnitTestsDemo.UnitTests.csproj
 git add .
 git commit -m 'Add xUnit unit tests project'
 ```
