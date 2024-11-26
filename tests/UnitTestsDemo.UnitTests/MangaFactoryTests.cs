@@ -1,5 +1,4 @@
 ﻿using Bogus;
-
 using UnitTestsDemo.Core.Extensions;
 using UnitTestsDemo.Core.Models;
 
@@ -23,11 +22,11 @@ public class MangaFactoryTests
             {
                 _faker.Random.Enum<MangaGenres>(),
                 _faker.Random.Enum<MangaGenres>(),
-                _faker.Random.Enum<MangaGenres>()
+                _faker.Random.Enum<MangaGenres>(),
             },
             Price = _faker.Finance.Amount(),
             ReleaseDate = _faker.Date.Past(),
-            CreatedAt = _faker.Date.Soon()
+            CreatedAt = _faker.Date.Soon(),
         };
     }
 
@@ -38,8 +37,7 @@ public class MangaFactoryTests
         var randomManga = CreateRandomManga();
 
         // Act
-        var manga = MangaFactory.CreateManga
-        (
+        var manga = MangaFactory.CreateManga(
             randomManga.Title,
             randomManga.Genres,
             randomManga.Price,

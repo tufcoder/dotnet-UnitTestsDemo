@@ -1,6 +1,4 @@
-﻿using System;
-
-using UnitTestsDemo.Core.Extensions;
+﻿using UnitTestsDemo.Core.Extensions;
 using UnitTestsDemo.Core.Models;
 using UnitTestsDemo.UnitTests.Builders;
 
@@ -31,10 +29,10 @@ public class MangaBuilderTests
             .Build();
 
         // Act
-        var actualManga = MangaFactory.CreateManga
-        (
+        var actualManga = MangaFactory.CreateManga(
             "One Piece",
-            new List<MangaGenres>() {
+            new List<MangaGenres>()
+            {
                 MangaGenres.Shounen,
                 MangaGenres.Commedy,
                 MangaGenres.Pirates,
@@ -59,13 +57,7 @@ public class MangaBuilderTests
         // Arrange
         var expectedManga = new MangaBuilder()
             .WithTitle("Hajime no Ippo")
-            .WithGenres(
-                new List<MangaGenres>()
-                {
-                    MangaGenres.Shounen,
-                    MangaGenres.Commedy,
-                }
-            )
+            .WithGenres(new List<MangaGenres>() { MangaGenres.Shounen, MangaGenres.Commedy })
             .WithDefaultPrice()
             .WithGenre(MangaGenres.Boxers)
             .WithReleaseDate(_releaseDate)
@@ -73,8 +65,7 @@ public class MangaBuilderTests
             .Build();
 
         // Act
-        var manga = MangaFactory.CreateManga
-        (
+        var manga = MangaFactory.CreateManga(
             expectedManga.Title,
             expectedManga.Genres,
             expectedManga.Price,

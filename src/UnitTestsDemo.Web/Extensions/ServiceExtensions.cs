@@ -4,8 +4,7 @@ namespace UnitTestsDemo.Web.Extensions;
 
 public static class ServiceExtensions
 {
-    public static IServiceCollection AddServiceConfigurations
-    (
+    public static IServiceCollection AddServiceConfigurations(
         this IServiceCollection services,
         WebApplicationBuilder builder
     )

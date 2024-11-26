@@ -1,4 +1,4 @@
-## Infrastructure Project
+# Infrastructure Project
 
 In Clean Architecture, Infrastructure concerns are kept separte from the core business rules (or domain model in DDD).
 

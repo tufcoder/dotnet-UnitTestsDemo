@@ -22,7 +22,7 @@ public class MangaBuilder
         _genres = newGenres;
         return this;
     }
-    
+
     public MangaBuilder WithTitle(string title)
     {
         _title = title;

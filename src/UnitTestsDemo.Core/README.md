@@ -1,4 +1,4 @@
-## Core (Domain Model) Project
+# Core (Domain Model) Project
 
 In Clean Architecture, the central focus should be on Entities and business rules.
 
@@ -17,3 +17,4 @@ Entities can define Specifications that can be used to query for them.
 For mutable access, Entities should be accessed through a Repository interface.
 
 Read-only ad hoc queries can use separate Query Services that don't use the Domain Model.
+

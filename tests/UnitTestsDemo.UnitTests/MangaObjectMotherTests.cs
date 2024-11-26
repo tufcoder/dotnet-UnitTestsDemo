@@ -1,7 +1,4 @@
-﻿using System;
-
-using UnitTestsDemo.Core.Extensions;
-using UnitTestsDemo.Core.Models;
+﻿using UnitTestsDemo.Core.Extensions;
 
 namespace UnitTestsDemo.UnitTests;
 
@@ -14,8 +11,7 @@ public class MangaObjectMotherTests
         var expectedManga = MangaObjectMother.CreateOnePieceManga();
 
         // Act
-        var manga = MangaFactory.CreateManga
-        (
+        var manga = MangaFactory.CreateManga(
             expectedManga.Title,
             expectedManga.Genres,
             expectedManga.Price,
@@ -39,8 +35,7 @@ public class MangaObjectMotherTests
         var expectedManga = MangaObjectMother.CreateHajimeNoIppoManga();
 
         // Act
-        var manga = MangaFactory.CreateManga
-        (
+        var manga = MangaFactory.CreateManga(
             expectedManga.Title,
             expectedManga.Genres,
             expectedManga.Price,

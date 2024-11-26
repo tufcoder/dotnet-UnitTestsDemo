@@ -4,8 +4,7 @@ namespace UnitTestsDemo.Core.Extensions;
 
 public class MangaFactory
 {
-    public static Manga CreateManga
-    (
+    public static Manga CreateManga(
         string title,
         IEnumerable<MangaGenres> genres,
         decimal price,
@@ -19,7 +18,7 @@ public class MangaFactory
             Genres = genres,
             Price = price,
             ReleaseDate = releaseDate,
-            CreatedAt = createdAt
+            CreatedAt = createdAt,
         };
     }
 }

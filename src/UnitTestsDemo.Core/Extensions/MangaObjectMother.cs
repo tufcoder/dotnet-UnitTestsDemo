@@ -12,14 +12,15 @@ public class MangaObjectMother
         return new Manga
         {
             Title = "One Piece",
-            Genres = new List<MangaGenres>() {
+            Genres = new List<MangaGenres>()
+            {
                 MangaGenres.Shounen,
                 MangaGenres.Commedy,
                 MangaGenres.Pirates,
             },
             Price = 19.99m,
             ReleaseDate = _releaseDate,
-            CreatedAt = _createdAt
+            CreatedAt = _createdAt,
         };
     }
 
@@ -28,14 +29,15 @@ public class MangaObjectMother
         return new Manga
         {
             Title = "Hajime no Ippo",
-            Genres = new List<MangaGenres>() {
+            Genres = new List<MangaGenres>()
+            {
                 MangaGenres.Shounen,
                 MangaGenres.Commedy,
                 MangaGenres.Boxers,
             },
             Price = 21.99m,
             ReleaseDate = _releaseDate,
-            CreatedAt = _createdAt
+            CreatedAt = _createdAt,
         };
     }
 }
