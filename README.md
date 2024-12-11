@@ -169,3 +169,7 @@ Open a Issue if you want to discuss something 😄.
 
 Feel free to Fork this project to add your ideas and send me a Pull Request
 to be reviewed and merged.
+
+## 🆘 Useful links
+
+https://stackoverflow.com/questions/76964714/how-to-create-ef-core-migrations-while-using-clean-architecture-if-it-needs-to

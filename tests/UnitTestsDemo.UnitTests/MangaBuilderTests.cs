@@ -14,6 +14,7 @@ public class MangaBuilderTests
     {
         // Arrange
         var expectedManga = new MangaBuilder()
+            .WithNewUlid()
             .WithTitle("One Piece")
             .WithGenres(
                 new List<MangaGenres>()
@@ -29,7 +30,7 @@ public class MangaBuilderTests
             .Build();
 
         // Act
-        var actualManga = MangaFactory.CreateManga(
+        var manga = MangaFactory.CreateManga(
             "One Piece",
             new List<MangaGenres>()
             {
@@ -43,12 +44,13 @@ public class MangaBuilderTests
         );
 
         // Assert
-        Assert.NotNull(actualManga);
-        Assert.Equal(expectedManga.Title, actualManga.Title);
-        Assert.Equal(expectedManga.Genres, actualManga.Genres);
-        Assert.Equal(expectedManga.Price, actualManga.Price);
-        Assert.Equal(expectedManga.ReleaseDate, actualManga.ReleaseDate);
-        Assert.Equal(expectedManga.CreatedAt, actualManga.CreatedAt);
+        Assert.NotNull(manga);
+        Assert.NotEqual(expectedManga.Id, manga.Id);
+        Assert.Equal(expectedManga.Title, manga.Title);
+        Assert.Equal(expectedManga.Genres, manga.Genres);
+        Assert.Equal(expectedManga.Price, manga.Price);
+        Assert.Equal(expectedManga.ReleaseDate, manga.ReleaseDate);
+        Assert.Equal(expectedManga.CreatedAt, manga.CreatedAt);
     }
 
     [Fact]
@@ -56,6 +58,7 @@ public class MangaBuilderTests
     {
         // Arrange
         var expectedManga = new MangaBuilder()
+            .WithCustomUlid(Ulid.NewUlid())
             .WithTitle("Hajime no Ippo")
             .WithGenres(new List<MangaGenres>() { MangaGenres.Shounen, MangaGenres.Commedy })
             .WithDefaultPrice()
@@ -67,7 +70,7 @@ public class MangaBuilderTests
         // Act
         var manga = MangaFactory.CreateManga(
             expectedManga.Title,
-            expectedManga.Genres,
+            expectedManga.Genres!,
             expectedManga.Price,
             expectedManga.ReleaseDate,
             expectedManga.CreatedAt
@@ -75,6 +78,7 @@ public class MangaBuilderTests
 
         // Assert
         Assert.NotNull(manga);
+        Assert.NotEqual(expectedManga.Id, manga.Id);
         Assert.Equal(expectedManga.Title, manga.Title);
         Assert.Equal(expectedManga.Genres, manga.Genres);
         Assert.Equal(expectedManga.Price, manga.Price);

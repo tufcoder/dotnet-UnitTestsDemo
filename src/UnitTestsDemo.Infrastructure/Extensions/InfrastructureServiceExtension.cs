@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 using UnitTestsDemo.Infrastructure.Data;
 
-namespace UnitTestsDemo.Infrastructure;
+namespace UnitTestsDemo.Infrastructure.Extensions;
 
 public static class InfrastructureServiceExtension
 {
@@ -15,6 +16,8 @@ public static class InfrastructureServiceExtension
         var connectionString = configurationManager.GetConnectionString("SQLite");
 
         services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionString));
+
+        services.AddScoped<AppDbContext>();
 
         return services;
     }

@@ -1,4 +1,36 @@
 ﻿@page
+@using UnitTestsDemo.Infrastructure.Utils
 @model UnitTestsDemo.Web.Pages.Mangas.IndexModel
 @{
+    ViewData["title"] = "Mangas";
 }
+<h1>@ViewData["title"]</h1>
+
+<div class="table-responsive-sm">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Genres</th>
+                <th scope="col">Price</th>
+                <th scope="col">Release Date</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Manga)
+            {
+                <tr scope="row">
+                    <td>@Html.DisplayFor(model => item.Title)</td>
+                    <td>@Format.FormatGenresToLineWithComma(item.Genres)</td>
+                    <td>@Format.FormatPrice(item.Price)</td>
+                    <td>@Format.FormatShortDate(item.ReleaseDate)</td>
+                    <td>
+                        <a asp-route-id="@item.Id.ToString()" asp-page="/Mangas/Edit">Edit</a>
+                        <a asp-route-id="@item.Id.ToString()" asp-page="/Mangas/Delete">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

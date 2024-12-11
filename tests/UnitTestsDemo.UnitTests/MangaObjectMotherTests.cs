@@ -13,7 +13,7 @@ public class MangaObjectMotherTests
         // Act
         var manga = MangaFactory.CreateManga(
             expectedManga.Title,
-            expectedManga.Genres,
+            expectedManga.Genres!,
             expectedManga.Price,
             expectedManga.ReleaseDate,
             expectedManga.CreatedAt
@@ -37,7 +37,7 @@ public class MangaObjectMotherTests
         // Act
         var manga = MangaFactory.CreateManga(
             expectedManga.Title,
-            expectedManga.Genres,
+            expectedManga.Genres!,
             expectedManga.Price,
             expectedManga.ReleaseDate,
             expectedManga.CreatedAt

@@ -1,4 +1,5 @@
 ﻿using Bogus;
+
 using UnitTestsDemo.Core.Extensions;
 using UnitTestsDemo.Core.Models;
 
@@ -39,7 +40,7 @@ public class MangaFactoryTests
         // Act
         var manga = MangaFactory.CreateManga(
             randomManga.Title,
-            randomManga.Genres,
+            randomManga.Genres!,
             randomManga.Price,
             randomManga.ReleaseDate,
             randomManga.CreatedAt

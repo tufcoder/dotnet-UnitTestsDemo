@@ -1,0 +1,29 @@
+﻿@page
+@using UnitTestsDemo.Infrastructure.Utils
+@model UnitTestsDemo.Web.Pages.Mangas.EditModel
+@{
+    ViewData["title"] = "Edit Mangá";
+}
+
+<h1>@ViewData["title"]</h1>
+
+<div class="table-responsive-sm">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Genres</th>
+                <th scope="col">Price</th>
+                <th scope="col">Release Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr scope="row">
+                <td>@Model.Manga.Title</td>
+                <td>@Format.FormatGenresToLineWithComma(Model.Manga.Genres)</td>
+                <td>@Format.FormatPrice(Model.Manga.Price)</td>
+                <td>@Format.FormatShortDate(Model.Manga.ReleaseDate)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

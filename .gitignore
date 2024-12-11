@@ -3,9 +3,12 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+# Notes
+notes.txt
+
 # sqlite
-*.db
-*.sqlite
+*.db*
+*.sqlite*
 
 # dotenv files
 .env
@@ -387,6 +390,7 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json

@@ -4,11 +4,24 @@ namespace UnitTestsDemo.UnitTests.Builders;
 
 public class MangaBuilder
 {
+    private Ulid _id = Ulid.Empty;
     private string _title = string.Empty;
     private IEnumerable<MangaGenres> _genres = [];
     private decimal _price;
     private DateTime _releaseDate;
     private DateTime _createdAt;
+
+    public MangaBuilder WithNewUlid()
+    {
+        _id = Ulid.NewUlid();
+        return this;
+    }
+
+    public MangaBuilder WithCustomUlid(Ulid id)
+    {
+        _id = id;
+        return this;
+    }
 
     public MangaBuilder WithDefaultPrice()
     {
@@ -57,6 +70,7 @@ public class MangaBuilder
     {
         return new Manga
         {
+            Id = _id,
             Title = _title,
             Genres = _genres,
             Price = _price,

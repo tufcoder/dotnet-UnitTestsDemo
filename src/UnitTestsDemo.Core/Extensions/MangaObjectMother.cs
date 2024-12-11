@@ -11,6 +11,7 @@ public class MangaObjectMother
     {
         return new Manga
         {
+            Id = Ulid.NewUlid(),
             Title = "One Piece",
             Genres = new List<MangaGenres>()
             {
@@ -28,6 +29,7 @@ public class MangaObjectMother
     {
         return new Manga
         {
+            Id = Ulid.NewUlid(),
             Title = "Hajime no Ippo",
             Genres = new List<MangaGenres>()
             {

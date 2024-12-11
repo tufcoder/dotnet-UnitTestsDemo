@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+
 using UnitTestsDemo.Core.Models;
+using UnitTestsDemo.Infrastructure.Configurations;
+using UnitTestsDemo.Infrastructure.Extensions;
 
 namespace UnitTestsDemo.Infrastructure.Data;
 
@@ -12,6 +15,9 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
+        // new MangaConfiguration().Configure(modelBuilder.Entity<Manga>());
+        modelBuilder
+            .ApplyConfiguration(new MangaConfiguration())
+            .SeedDatabase();
     }
 }

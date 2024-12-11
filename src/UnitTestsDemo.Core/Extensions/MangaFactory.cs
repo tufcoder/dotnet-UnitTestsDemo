@@ -14,6 +14,7 @@ public class MangaFactory
     {
         return new Manga
         {
+            Id = Ulid.NewUlid(),
             Title = title,
             Genres = genres,
             Price = price,
