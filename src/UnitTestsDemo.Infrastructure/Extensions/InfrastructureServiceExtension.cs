@@ -10,8 +10,7 @@ public static class InfrastructureServiceExtension
 {
     public static IServiceCollection AddInfrastructureServices(
         this IServiceCollection services,
-        ConfigurationManager configurationManager
-    )
+        ConfigurationManager configurationManager)
     {
         var connectionString = configurationManager.GetConnectionString("SQLite");
 
