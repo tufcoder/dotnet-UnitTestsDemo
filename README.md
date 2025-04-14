@@ -69,7 +69,7 @@ Basically this project uses 3 patterns:
   > step by step. The pattern allows you to produce different types and
   > representations of an object using the same construction code.
 
-### IMPORTANT => Settings
+### ⚠️ IMPORTANT => Settings
 
 Here are some `NuGet` packages that this project needs:
 
